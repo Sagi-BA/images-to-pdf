@@ -4,7 +4,7 @@
 
 > You can find video tutorial to build this application [on YouTube](https://youtu.be/nn25oTz8zxE).
 
-> You can find running Demo [here](https://langchain-rag.streamlit.app/)
+> You can find running Demo [here](https://sagi-images-to-pdf.streamlit.app/)
 
 This application allows users to upload images and convert them to a PDF file.
 Images can be added, removed and rearranged.
