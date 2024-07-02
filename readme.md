@@ -2,9 +2,11 @@
 
 # 👀 Convert Photos to PDF file
 
-> You can find video tutorial to build this application [on YouTube](https://youtu.be/xj8COkST--8).
+> You can try the app [here](https://sagi-images-to-pdf.streamlit.app/)
 
-> You can find running Demo [here](https://sagi-images-to-pdf.streamlit.app/)
+## Watch the video tutorial
+
+[![Watch the video](https://img.youtube.com/vi/xj8COkST--8/maxresdefault.jpg)](https://youtu.be/xj8COkST--8)
 
 This application allows users to upload images and convert them to a PDF file.
 Images can be added, removed and rearranged.
