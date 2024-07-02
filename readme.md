@@ -21,35 +21,28 @@ Join my [WhatsApp AI TIPS & TRICKS Channel](https://whatsapp.com/channel/0029Vaj
 
 ## How it works
 
-The application reads the PDF file and processes the data. It utilizes OpenAI LLMs alongside Langchain to answer your questions. From the results, I used an appropriate response with the help of a LLM.
-
-The application Streamlit creates the graphical user interface (GUI) and utilizes Langchain to interact with the LLM.
+This application allows users to upload images and convert them into a PDF file.  
+Users can add, remove, and reorder images.  
+After clicking 'Create PDF', the file will be generated and automatically downloaded.
 
 ## Install dependencies
 
-1. Do the following before installing the dependencies found in `requirements.txt` file because of current challenges installing `onnxruntime` through `pip install onnxruntime`.
+To use this application, you need to install the necessary dependencies.  
+Run the following command to install them:
 
-   - For MacOS users, a workaround is to first install `onnxruntime` dependency for `chromadb` using:
-
-   ```python
-    conda install onnxruntime -c conda-forge
-   ```
-
-   See this [thread](https://github.com/microsoft/onnxruntime/issues/11037) for additional help if needed.
-
-   - For Windows users, follow the guide [here](https://github.com/bycloudai/InstallVSBuildToolsWindows?tab=readme-ov-file) to install the Microsoft C++ Build Tools. Be sure to follow through to the last step to set the environment variable path.
-
-2. Install Tesseract [here](https://github.com/UB-Mannheim/tesseract/wiki) is an open source OCR or optical character recognition engine and command line program.
-
-3. Now run this command to install dependencies in the `requirements.txt` file.
-
-```python
-pip install -r requirements.txt
+```sh
+ pip install -r requirements.txt
 ```
 
 ## Usage
 
-Make sure you have [Streamlit installed](https://docs.streamlit.io/) CLI before running the application. Run the following command in your terminal:
+Upload Images: Click the 'Upload' button to select images from your device.
+Manage Images: Use the add (➕), remove (➖), and reorder (🔄) options to organize your images.
+Create PDF: Once the images are arranged as desired, click 'Create PDF' (📥).  
+The application will generate the PDF and automatically download it to your device.
+
+Make sure you have [Streamlit installed](https://docs.streamlit.io/) CLI before running the application.  
+Run the following command in your terminal:
 
 ```
 streamlit run main.py
