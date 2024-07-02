@@ -6,4 +6,4 @@ Join my [WhatsApp AI TIPS & TRICKS Channel](https://whatsapp.com/channel/0029Vaj
 
 🔗 [GitHub Link](https://github.com/Sagi-BA/images-to-pdf)
 
-נוצר על ידי שגיא בר
+נוצר על ידי שגיא בר און
