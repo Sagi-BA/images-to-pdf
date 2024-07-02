@@ -6,9 +6,7 @@
 
 ## Watch the video tutorial
 
-<a href="https://youtu.be/xj8COkST--8" target="_blank">
-  <img src="https://img.youtube.com/vi/xj8COkST--8/maxresdefault.jpg" alt="Watch the video">
-</a>
+[![Watch the video](https://img.youtube.com/vi/xj8COkST--8/maxresdefault.jpg)](https://youtu.be/xj8COkST--8)
 
 This application allows users to upload images and convert them to a PDF file.
 Images can be added, removed and rearranged.
