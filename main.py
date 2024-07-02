@@ -5,7 +5,10 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 import time
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",                   
+    page_title="📷 המרת תמונות לקובץ PDF ",
+    page_icon="📷"
+)
 
 # Load header and footer content
 try:
@@ -130,6 +133,8 @@ def main():
 
     # Main content area
     main_content = st.container()
+    
+    
     main_content.title("📷➡️📄 המרת תמונות לקובץ PDF ")
 
     # Display images
