@@ -1,0 +1,33 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+[data-testid="stSidebar"] {
+  direction: rtl;
+  text-align: right;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+}
+.main {
+  margin-right: 250px;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  direction: rtl;
+  text-align: right;
+}
+.stButton > button {
+  float: right;
+}
+.row-widget.stRadio > div {
+  flex-direction: row-reverse;
+}
+.stCheckbox > label {
+  direction: ltr;
+}

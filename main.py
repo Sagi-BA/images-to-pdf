@@ -1,83 +1,15 @@
+import os
 import streamlit as st
 from PIL import Image, ImageOps
 import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 import time
+from utils.init import initialize
 
-st.set_page_config(layout="wide",                   
-    page_title="📷 המרת תמונות לקובץ PDF ",
-    page_icon="📷"
-)
+# Initialize Streamlit configuration and load resources
+header_content, footer_content = initialize()
 
-# Load header and footer content
-try:
-    with open('header.md', 'r', encoding='utf-8') as header_file:
-        header_content = header_file.read()
-except FileNotFoundError:
-    st.error("header.md file not found.")
-    header_content = ""  # Provide a default empty header
-
-try:
-    with open('footer.md', 'r', encoding='utf-8') as footer_file:
-        footer_content = footer_file.read()
-except FileNotFoundError:
-    st.error("footer.md file not found.")
-    footer_content = ""  # Provide a default empty footer
-
-# Custom CSS for RTL layout and moving sidebar to the right
-st.markdown("""
-<style>
-    body {
-        direction: rtl;
-        text-align: right;
-    }
-    [data-testid="stSidebar"] {
-        direction: rtl;
-        text-align: right;
-        position: fixed;
-        right: 0;
-        top: 0;
-        height: 100vh;
-        width: 250px;
-    }
-    .main {
-        margin-right: 250px;
-    }
-    button, input, optgroup, select, textarea {
-        direction: rtl;
-        text-align: right;
-    }
-    .stButton > button {
-        float: right;
-    }
-    .row-widget.stRadio > div {
-        flex-direction: row-reverse;
-    }
-    .stCheckbox > label {
-        direction: ltr;
-    }
-</style>
-
-<script>
-    function reloadPage() {
-        window.sessionStorage.setItem('clear_uploader', 'true');
-        window.location.reload();
-    }
-
-    window.addEventListener('load', function() {
-        if (window.sessionStorage.getItem('clear_uploader') === 'true') {
-            window.sessionStorage.removeItem('clear_uploader');
-            const fileInput = window.parent.document.querySelector('input[type="file"]');
-            if (fileInput) {
-                fileInput.value = '';
-                const event = new Event('change', { bubbles: true });
-                fileInput.dispatchEvent(event);
-            }
-        }
-    });
-</script>
-""", unsafe_allow_html=True)
 
 def create_pdf(images):
     pdf_buffer = io.BytesIO()
@@ -132,8 +64,7 @@ def main():
     st.session_state.images = [img for img in st.session_state.images if img['file'] in uploaded_files]
 
     # Main content area
-    main_content = st.container()
-    
+    main_content = st.container()    
     
     main_content.title("📷➡️📄 המרת תמונות לקובץ PDF ")
 
