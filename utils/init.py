@@ -2,10 +2,7 @@ import streamlit as st
 import os
 
 def initialize():
-    st.set_page_config(layout="wide",                   
-        page_title="📷 המרת תמונות לקובץ PDF ",
-        page_icon="📷"
-    )
+    st.set_page_config(layout="wide", page_title="📷 המרת תמונות לקובץ PDF", page_icon="📷")
 
     # Load external CSS
     css_file_path = os.path.join('utils', 'styles.css')
