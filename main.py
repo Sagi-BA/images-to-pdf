@@ -5,9 +5,14 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 import time
 from utils.init import initialize
+from utils.counter import get_user_count, update_user_count, USER_COUNT_CSS
+import atexit
 
 # Initialize Streamlit configuration and load resources
 header_content, footer_content = initialize()
+
+# Add user count CSS
+st.markdown(USER_COUNT_CSS, unsafe_allow_html=True)
 
 def create_pdf(images):
     pdf_buffer = io.BytesIO()
@@ -32,13 +37,21 @@ def resize_image(image, max_size=(800, 800)):
     """Resize image while maintaining aspect ratio"""
     return ImageOps.contain(image, max_size, Image.LANCZOS)
 
-def main():   
+def main():
+    # Increment user count when a new session starts
+    if 'user_counted' not in st.session_state:
+        st.session_state.user_counted = True
+        update_user_count(1)
+
     # Header
     st.markdown(header_content)        
 
     # Handle the "Start Over" button click
     if st.button("התחל מחדש", use_container_width=True):
         st.session_state.clear()               
+
+    # Register function to decrement user count when the session ends
+    atexit.register(update_user_count, -1)
 
     # File uploader
     uploaded_files = st.file_uploader(
@@ -75,7 +88,7 @@ def main():
                         st.session_state.images.insert(i-1, st.session_state.images.pop(i))
                         # st.experimental_rerun()
     
-    if st.button("צור והורד PDF", use_container_width=True):
+    if st.button("לחץ ליצירת PDF", use_container_width=True):
         if st.session_state.images:
             with st.spinner("יוצר PDF... אנא המתן"):
                 progress_bar = st.progress(0)
@@ -95,9 +108,11 @@ def main():
         else:
             st.warning("אנא העלה תמונות לפני יצירת ה-PDF.")
 
-    # Footer
+    # Footer with user count
     st.markdown("---")
-    st.markdown(footer_content, unsafe_allow_html=True)
+    user_count = get_user_count()
+    footer_with_count = f"{footer_content}\n\n<p class='user-count'>מספר משתמשים מחוברים: {user_count}</p>"
+    st.markdown(footer_with_count, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()

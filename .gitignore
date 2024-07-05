@@ -1,3 +1,4 @@
 *.code-workspace
 .env
-
+data
+__pycache__
