@@ -13,9 +13,6 @@ header_content, footer_content = initialize()
 # Initialize user count
 initialize_user_count()
 
-# Add user count CSS
-st.markdown(USER_COUNT_CSS, unsafe_allow_html=True)
-
 # Increment user count if this is a new session
 if 'counted' not in st.session_state:
     st.session_state.counted = True

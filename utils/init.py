@@ -9,6 +9,10 @@ def initialize():
     with open(css_file_path, 'r') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
+    custom_file_path = os.path.join('utils', 'custom.css')
+    with open(custom_file_path, 'r') as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)        
+
     # Load external JavaScript
     js_file_path = os.path.join('utils', 'script.js')
     with open(js_file_path, 'r') as f:
