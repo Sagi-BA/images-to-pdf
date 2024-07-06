@@ -17,10 +17,6 @@
 [![Subscribe](https://img.shields.io/badge/Subscribe_to_my_YouTube_channel-white?style=for-the-badge&logo=youtube&logoColor=FF0000)](https://www.youtube.com/@SagiBaron)
 [![Request Tutorial](https://img.shields.io/badge/Request_How_To_Tutorial_Video-white?style=for-the-badge&logo=youtube&logoColor=FF0000)](https://www.youtube.com/watch?v=xj8COkST--8)
 
-### 💻 GitHub
-
-[![GitHub Repository](https://img.shields.io/badge/GitHub_Repository-white?style=for-the-badge&logo=github&logoColor=181717)](https://github.com/Sagi-BA/images-to-pdf)
-
 ### 📧 יצירת קשר
 
 [![Email Me](https://img.shields.io/badge/email_me-white?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:sagi.baron76@gmail.com)
@@ -29,6 +25,8 @@
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-white?style=for-the-badge&logo=buymeacoffee&logoColor=FFDD00)](https://buymeacoffee.com/sagibar)
 
----
+### 💻 GitHub
+
+## [![GitHub Repository](https://img.shields.io/badge/GitHub_Repository-white?style=for-the-badge&logo=github&logoColor=181717)](https://github.com/Sagi-BA/images-to-pdf)
 
 #### נוצר על ידי שגיא בר און
