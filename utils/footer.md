@@ -16,6 +16,7 @@
 
 [![Subscribe](https://img.shields.io/badge/Subscribe_to_my_YouTube_channel-white?style=for-the-badge&logo=youtube&logoColor=FF0000)](https://www.youtube.com/@SagiBaron)
 [![Request Tutorial](https://img.shields.io/badge/Request_How_To_Tutorial_Video-white?style=for-the-badge&logo=youtube&logoColor=FF0000)](https://www.youtube.com/watch?v=xj8COkST--8)
+[![Ask New AI Video](https://img.shields.io/badge/Ask_For_New_AI_Video-white?style=for-the-badge&logo=GoogleForms&logoColor=7248B9)](https://forms.gle/b5hw4Rfe6ZtXuiQV6)
 
 ### 📧 יצירת קשר
 
