@@ -24,7 +24,7 @@
 
 ### ☕ תמיכה
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-white?style=for-the-badge&logo=buymeacoffee&logoColor=FFDD00)](https://buymeacoffee.com/sagibar)
+[![Buy Me A Beer](https://img.shields.io/badge/Buy_Me_A_Beer-white?style=for-the-badge&logo=buymeacoffee&logoColor=FFDD00)](https://buymeacoffee.com/sagibar)
 
 ### 💻 GitHub
 
