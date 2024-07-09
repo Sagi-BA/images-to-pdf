@@ -1,3 +1,5 @@
 streamlit 
 pillow 
 reportlab
+python-dotenv
+aiohttp #for telegram

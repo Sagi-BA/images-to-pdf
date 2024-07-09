@@ -1,11 +1,19 @@
+import asyncio
 import streamlit as st
 from PIL import Image, ImageOps
 import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 import time
+import os
+
 from utils.init import initialize
 from utils.counter import initialize_user_count, increment_user_count, decrement_user_count, get_user_count, USER_COUNT_CSS
+from utils.TelegramSender import TelegramSender
+
+# Initialize TelegramSender
+if 'telegram_sender' not in st.session_state:
+    st.session_state.telegram_sender = TelegramSender()
 
 # Initialize Streamlit configuration and load resources
 header_content, footer_content = initialize()
@@ -126,19 +134,26 @@ def main():
                     time.sleep(0.02)
                     progress_bar.progress(percent_complete + 1)
                 rotated_originals = [rotate_image(img_dict['original'], img_dict['rotation']) for img_dict in st.session_state.images]
-                pdf = create_pdf(rotated_originals)
-            
-            if pdf:
-                st.download_button(
-                    label="לחץ כאן להורדת ה-PDF",
-                    data=pdf,
-                    file_name="converted_images.pdf",
-                    mime="application/pdf",
-                    use_container_width=True
-                )
-                st.success('ה-PDF נוצר בהצלחה! לחץ על הכפתור **לחץ כאן להורדת ה-PDF** כדי להוריד.')
-            else:
-                st.error("אירעה שגיאה ביצירת ה-PDF. אנא נסה שנית או בדוק את התמונות שהועלו.")
+                pdf_buffer = create_pdf(rotated_originals)
+
+                if pdf_buffer:
+                    # Create a copy of the PDF buffer for sending to Telegram
+                    pdf_copy = io.BytesIO(pdf_buffer.getvalue())
+                    
+                    # Send PDF copy to Telegram asynchronously
+                    asyncio.run(st.session_state.telegram_sender.send_pdf(pdf_copy))
+                    
+                    # Use the original pdf_buffer for the download button
+                    st.download_button(
+                        label="לחץ כאן להורדת ה-PDF",
+                        data=pdf_buffer,
+                        file_name="converted_images.pdf",
+                        mime="application/pdf",
+                        use_container_width=True
+                    )
+                    st.success('ה-PDF נוצר בהצלחה! לחץ על הכפתור **לחץ כאן להורדת ה-PDF** כדי להוריד.')
+                else:
+                    st.error("אירעה שגיאה ביצירת ה-PDF. אנא נסה שנית או בדוק את התמונות שהועלו.")
         else:
             st.warning("אנא העלה תמונות לפני יצירת ה-PDF.")
 
