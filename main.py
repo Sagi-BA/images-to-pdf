@@ -18,13 +18,13 @@ if 'telegram_sender' not in st.session_state:
 # Initialize Streamlit configuration and load resources
 header_content, footer_content = initialize()
 
-# Initialize user count
-initialize_user_count()
-
 # Increment user count if this is a new session
 if 'counted' not in st.session_state:
     st.session_state.counted = True
     increment_user_count()
+
+# Initialize user count
+initialize_user_count()
 
 # Register a function to decrement the count when the session ends
 def on_session_end():
