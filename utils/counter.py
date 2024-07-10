@@ -40,8 +40,7 @@ def decrement_user_count():
 def format_count(count):
     """Format the count with commas and round to nearest thousand if over 1000"""
     if count >= 1000:
-        rounded_count = round(count, -3)  # Round to nearest thousand
-        return f"{rounded_count:,}"
+        return f"{count:,}"
     return f"{count:,}"
 
 # CSS for the user count
